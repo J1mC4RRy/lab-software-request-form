@@ -10,8 +10,11 @@ pwd = os.getcwd
 
 # Load the logo image
 # logo_image = Image.open(pwd+ '\\unimelb_logo.jpg')
-logo_path = os.path.join(os.getcwd(), 'unimelb_logo.jpg')
-logo_image = Image.open(logo_path)
+#logo_path = os.path.join(os.getcwd(), 'unimelb_logo.jpg')
+#logo_image = Image.open(logo_path)
+
+path = os.path.dirname(__file__)
+logo_image = path+'/unimelb_logo.jpg'
 
 
 # Display the logo image in the top-left corner
