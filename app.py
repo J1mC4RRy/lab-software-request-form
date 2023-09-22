@@ -5,8 +5,6 @@ import os
 import requests
 import datetime
 import pytz
-from config import API_KEY
-
 
 # Load the logo image
 logo_image = Image.open('unimelb_logo.jpg')
