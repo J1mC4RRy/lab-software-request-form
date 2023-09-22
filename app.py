@@ -10,13 +10,13 @@ pwd = os.getcwd()
 
 # Load the logo image
 # logo_image = Image.open(pwd+ '\\unimelb_logo.jpg')
-#logo_path = os.path.join(os.getcwd(), 'unimelb_logo.jpg')
-#logo_image = Image.open(logo_path)
+logo_path = os.path.join(os.getcwd(), 'unimelb_logo.jpg')
+logo_image = Image.open(logo_path)
 
 
-logo_image = "/mount/src/lab-software-request-form/unimelb_logo.jpg"
-img = Image.open(logo_image)
-st.image(img, use_column_width=False, width=100)
+#logo_image = "/mount/src/lab-software-request-form/unimelb_logo.jpg"
+#img = Image.open(logo_image)
+st.image(logo_image, use_column_width=False, width=100)
 
 #path = os.path.dirname(__file__)
 #logo_image = pwd +'/unimelb_logo.jpg'
