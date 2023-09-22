@@ -13,12 +13,16 @@ pwd = os.getcwd()
 #logo_path = os.path.join(os.getcwd(), 'unimelb_logo.jpg')
 #logo_image = Image.open(logo_path)
 
-#path = os.path.dirname(__file__)
-logo_image = pwd +'/unimelb_logo.jpg'
 
+logo_image = "/mount/src/lab-software-request-form/unimelb_logo.jpg"
+img = Image.open(logo_image)
+st.image(img, use_column_width=False, width=100)
+
+#path = os.path.dirname(__file__)
+#logo_image = pwd +'/unimelb_logo.jpg'
 
 # Display the logo image in the top-left corner
-st.image(logo_image, use_column_width=False, width=100)
+#st.image(logo_image, use_column_width=False, width=100)
 
 
 # # Constants for Azure AD authentication
