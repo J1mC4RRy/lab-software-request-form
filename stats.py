@@ -6,7 +6,6 @@ import requests
 import datetime
 import pytz
 import base64  # Add this import statement
-import pandasai as pai  # Import pandasai for natural language processing of queries
 
 
 # Load the logo image
