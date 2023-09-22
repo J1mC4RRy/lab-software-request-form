@@ -30,7 +30,12 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 if os.path.exists('submissions.csv'):
     submissions_df = pd.read_csv('submissions.csv')
     #submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'])  # Convert to datetime
-    submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'], format='%Y-%m-%d %H:%M:%S')
+    #submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'], format='%d/%m/%Y %H:%M')
+    #submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'], format='%Y-%m-%d %H:%M:%S')
+    submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'], format='%d/%m/%Y %H:%M', errors='coerce')
+    mask = submissions_df['submission-date'].isna()  # Find where the conversion failed
+    submissions_df.loc[mask, 'submission-date'] = pd.to_datetime(submissions_df.loc[mask, 'DateTime'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
+
 
 else:
     st.write("No submissions found!")
