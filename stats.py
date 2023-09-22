@@ -9,7 +9,7 @@ import base64  # Add this import statement
 
 
 # Load the logo image
-logo_image = Image.open('unimelb_logo.jpg')
+logo_image = Image.open('unimelb_logo.JPG')
 
 # Display the logo image in the top-left corner
 st.image(logo_image, use_column_width=False, width=100)
