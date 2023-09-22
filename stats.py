@@ -9,7 +9,7 @@ import base64  # Add this import statement
 
 
 # Load the logo image
-logo_image = Image.open('unimelb_logo.JPG')
+logo_image = Image.open('unimelb_logo.jpg')
 
 # Display the logo image in the top-left corner
 st.image(logo_image, use_column_width=False, width=100)
@@ -29,7 +29,9 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Check if the submissions CSV exists
 if os.path.exists('submissions.csv'):
     submissions_df = pd.read_csv('submissions.csv')
-    submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'])  # Convert to datetime
+    #submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'])  # Convert to datetime
+    submissions_df['submission-date'] = pd.to_datetime(submissions_df['DateTime'], format='%Y-%m-%d %H:%M:%S')
+
 else:
     st.write("No submissions found!")
     st.stop()
