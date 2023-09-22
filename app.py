@@ -6,7 +6,7 @@ import requests
 import datetime
 import pytz
 
-pwd = os.getcwd
+pwd = os.getcwd()
 
 # Load the logo image
 # logo_image = Image.open(pwd+ '\\unimelb_logo.jpg')
