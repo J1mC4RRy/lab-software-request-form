@@ -7,8 +7,6 @@ import datetime
 import pytz
 import base64  # Add this import statement
 import pandasai as pai  # Import pandasai for natural language processing of queries
-from config import API_KEY
-from pandasai import SmartDataframe
 
 
 # Load the logo image
