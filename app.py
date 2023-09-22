@@ -6,8 +6,10 @@ import requests
 import datetime
 import pytz
 
+pwd = os.getcwd
+
 # Load the logo image
-logo_image = Image.open('unimelb_logo.jpg')
+logo_image = Image.open(pwd+ '\\unimelb_logo.jpg')
 
 # Display the logo image in the top-left corner
 st.image(logo_image, use_column_width=False, width=100)
