@@ -82,22 +82,3 @@ filename = f"submissions-{current_datetime}.csv"
 # Add a download button for the CSV file with the dynamic filename
 if st.download_button("Download CSV", submissions_df.to_csv(index=False), key="download-csv", mime='text/csv', file_name=filename):
     pass  # Placeholder, no action needed here
-
-os.environ["PANDASAI_API_KEY"] = API_KEY
-
-st.subheader("Chat with the App")
-user_query = st.text_input("Enter your query to plot a graph:")
-if st.button("Execute"):
-    try:
-        # Use pandasai to process the query
-        result = pai.ask(submissions_df, user_query)
-        
-        # Check if the result is a plot and display it
-        if isinstance(result, pd.DataFrame):
-            st.write(result)
-        elif "plot" in user_query.lower():
-            st.pyplot(result)
-        else:
-            st.write(result)
-    except Exception as e:
-        st.write(f"Error processing query: {e}")
